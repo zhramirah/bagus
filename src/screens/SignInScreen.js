@@ -53,6 +53,12 @@ const SignInScreen = () => {
           source={require("../../assets/console.png")}
           style={styles.consoleImage}
         />
+        {/* Centered Top Image (Optional) */}
+        <Image
+          source={require("../../assets/bsilogo.png")}
+          style={styles.bsilogoImage}
+        />
+
         {/* Header and Input Fields */}
         <Text style={styles.header}>Halo!</Text>
         <TextInput
@@ -73,8 +79,8 @@ const SignInScreen = () => {
           <Text style={styles.btnTitle}>Masuk</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.transparentBtn} onPress={signUp}>
-        <Text style={styles.transparentBtnTitle}>Belum punya akun? </Text>
-        <Text style={styles.boldText}>Daftar</Text>
+          <Text style={styles.transparentBtnTitle}>Belum punya akun? </Text>
+          <Text style={styles.boldText}>Daftar</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -104,6 +110,11 @@ const styles = StyleSheet.create({
   consoleImage: {
     width: 200, // Adjust width as needed
     height: 200, // Adjust height as needed
+    marginBottom: 0, // Add some margin below (optional)
+  },
+  bsilogoImage: {
+    width: 100, // Adjust width as needed
+    height: 100, // Adjust height as needed
     marginBottom: 0, // Add some margin below (optional)
   },
   header: {
