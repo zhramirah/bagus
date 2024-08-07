@@ -12,10 +12,12 @@ import { useNavigation } from "@react-navigation/native";
 import Firebase from "../../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
+
 const SignInScreen = () => {
   const navigation = useNavigation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
 
   const signIn = async () => {
     try {
@@ -29,9 +31,11 @@ const SignInScreen = () => {
     }
   };
 
+
   const signUp = () => {
     navigation.navigate("SignUpScreen");
   };
+
 
   return (
     <View style={styles.container}>
@@ -41,6 +45,7 @@ const SignInScreen = () => {
         style={styles.backgroundImage}
       />
 
+
       {/* Content Stack (Centered Vertically) */}
       <View style={styles.contentContainer}>
         {/* Centered Top Image (Optional) */}
@@ -49,13 +54,7 @@ const SignInScreen = () => {
           style={styles.consoleImage}
         />
         {/* Header and Input Fields */}
-        <View style={styles.headerContainer}>
-          <Text style={styles.header}>Halo!</Text>
-          <Image
-            source={require("../../assets/bsilogo.png")}
-            style={styles.logoImage}
-          />
-        </View>
+        <Text style={styles.header}>Halo!</Text>
         <TextInput
           value={email}
           onChangeText={setEmail}
@@ -74,13 +73,14 @@ const SignInScreen = () => {
           <Text style={styles.btnTitle}>Masuk</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.transparentBtn} onPress={signUp}>
-          <Text style={styles.transparentBtnTitle}>Belum punya akun? </Text>
-          <Text style={styles.boldText}>Daftar</Text>
+        <Text style={styles.transparentBtnTitle}>Belum punya akun? </Text>
+        <Text style={styles.boldText}>Daftar</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
+
 
 const styles = StyleSheet.create({
   container: {
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   contentContainer: {
     flex: 1, // Fills the container (excluding the background image)
-    justifyContent: "center", // Vertically centers the content
+    justifyContent: "left", // Vertically centers the content
     alignItems: "center", // Horizontally centers the content
   },
   consoleImage: {
@@ -106,20 +106,11 @@ const styles = StyleSheet.create({
     height: 200, // Adjust height as needed
     marginBottom: 0, // Add some margin below (optional)
   },
-  headerContainer: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginBottom: 24,
-  },
   header: {
     fontSize: 40,
     fontWeight: "bold",
+    marginBottom: 24,
     color: colors.textColors.white,
-  },
-  logoImage: {
-    width: 40, // Adjust width as needed
-    height: 40, // Adjust height as needed
-    marginLeft: 10, // Space between text and image
   },
   input: {
     height: 56,
@@ -159,5 +150,6 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
 });
+
 
 export default SignInScreen;
